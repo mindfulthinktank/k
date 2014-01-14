@@ -480,19 +480,36 @@ public class KlangParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
-	public static class IgnoreLiteralContext extends LiteralContext {
-		public IgnoreLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
+	public static class StringLiteralContext extends LiteralContext {
+		public TerminalNode StringLiteral() { return getToken(KlangParser.StringLiteral, 0); }
+		public StringLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof KlangListener ) ((KlangListener)listener).enterIgnoreLiteral(this);
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).enterStringLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof KlangListener ) ((KlangListener)listener).exitIgnoreLiteral(this);
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).exitStringLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof KlangVisitor ) return ((KlangVisitor<? extends T>)visitor).visitIgnoreLiteral(this);
+			if ( visitor instanceof KlangVisitor ) return ((KlangVisitor<? extends T>)visitor).visitStringLiteral(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class NullLiteralContext extends LiteralContext {
+		public NullLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).enterNullLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).exitNullLiteral(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KlangVisitor ) return ((KlangVisitor<? extends T>)visitor).visitNullLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -513,6 +530,57 @@ public class KlangParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	public static class FloatLiteralContext extends LiteralContext {
+		public TerminalNode FloatingPointLiteral() { return getToken(KlangParser.FloatingPointLiteral, 0); }
+		public FloatLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).enterFloatLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).exitFloatLiteral(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KlangVisitor ) return ((KlangVisitor<? extends T>)visitor).visitFloatLiteral(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class CharacterLiteralContext extends LiteralContext {
+		public TerminalNode CharacterLiteral() { return getToken(KlangParser.CharacterLiteral, 0); }
+		public CharacterLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).enterCharacterLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).exitCharacterLiteral(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KlangVisitor ) return ((KlangVisitor<? extends T>)visitor).visitCharacterLiteral(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class BooleanLiteralContext extends LiteralContext {
+		public TerminalNode BooleanLiteral() { return getToken(KlangParser.BooleanLiteral, 0); }
+		public BooleanLiteralContext(LiteralContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).enterBooleanLiteral(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).exitBooleanLiteral(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KlangVisitor ) return ((KlangVisitor<? extends T>)visitor).visitBooleanLiteral(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 
 	public final LiteralContext literal() throws RecognitionException {
 		LiteralContext _localctx = new LiteralContext(_ctx, getState());
@@ -528,35 +596,35 @@ public class KlangParser extends Parser {
 				}
 				break;
 			case FloatingPointLiteral:
-				_localctx = new IgnoreLiteralContext(_localctx);
+				_localctx = new FloatLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(64); match(FloatingPointLiteral);
 				}
 				break;
 			case CharacterLiteral:
-				_localctx = new IgnoreLiteralContext(_localctx);
+				_localctx = new CharacterLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(65); match(CharacterLiteral);
 				}
 				break;
 			case StringLiteral:
-				_localctx = new IgnoreLiteralContext(_localctx);
+				_localctx = new StringLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
 				setState(66); match(StringLiteral);
 				}
 				break;
 			case BooleanLiteral:
-				_localctx = new IgnoreLiteralContext(_localctx);
+				_localctx = new BooleanLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 5);
 				{
 				setState(67); match(BooleanLiteral);
 				}
 				break;
 			case NullLiteral:
-				_localctx = new IgnoreLiteralContext(_localctx);
+				_localctx = new NullLiteralContext(_localctx);
 				enterOuterAlt(_localctx, 6);
 				{
 				setState(68); match(NullLiteral);

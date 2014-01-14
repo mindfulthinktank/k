@@ -18,6 +18,14 @@ public class KlangBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.
 	 */
+	@Override public T visitStringLiteral(@NotNull KlangParser.StringLiteralContext ctx) { return visitChildren(ctx); }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.
+	 */
 	@Override public T visitParExpression(@NotNull KlangParser.ParExpressionContext ctx) { return visitChildren(ctx); }
 
 	/**
@@ -34,7 +42,7 @@ public class KlangBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.
 	 */
-	@Override public T visitPrimitiveCollectionType(@NotNull KlangParser.PrimitiveCollectionTypeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitNullLiteral(@NotNull KlangParser.NullLiteralContext ctx) { return visitChildren(ctx); }
 
 	/**
 	 * {@inheritDoc}
@@ -42,7 +50,7 @@ public class KlangBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.
 	 */
-	@Override public T visitIgnoreLiteral(@NotNull KlangParser.IgnoreLiteralContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPrimitiveCollectionType(@NotNull KlangParser.PrimitiveCollectionTypeContext ctx) { return visitChildren(ctx); }
 
 	/**
 	 * {@inheritDoc}
@@ -82,7 +90,23 @@ public class KlangBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.
 	 */
+	@Override public T visitFloatLiteral(@NotNull KlangParser.FloatLiteralContext ctx) { return visitChildren(ctx); }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.
+	 */
 	@Override public T visitPrintStatement(@NotNull KlangParser.PrintStatementContext ctx) { return visitChildren(ctx); }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.
+	 */
+	@Override public T visitCharacterLiteral(@NotNull KlangParser.CharacterLiteralContext ctx) { return visitChildren(ctx); }
 
 	/**
 	 * {@inheritDoc}
@@ -155,4 +179,12 @@ public class KlangBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * {@link #visitChildren} on {@code ctx}.
 	 */
 	@Override public T visitIgnore(@NotNull KlangParser.IgnoreContext ctx) { return visitChildren(ctx); }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.
+	 */
+	@Override public T visitBooleanLiteral(@NotNull KlangParser.BooleanLiteralContext ctx) { return visitChildren(ctx); }
 }

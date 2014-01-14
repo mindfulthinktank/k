@@ -12,6 +12,13 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface KlangVisitor<T> extends ParseTreeVisitor<T> {
 	/**
+	 * Visit a parse tree produced by {@link KlangParser#StringLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringLiteral(@NotNull KlangParser.StringLiteralContext ctx);
+
+	/**
 	 * Visit a parse tree produced by {@link KlangParser#parExpression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -26,18 +33,18 @@ public interface KlangVisitor<T> extends ParseTreeVisitor<T> {
 	T visitPrimaryExpression(@NotNull KlangParser.PrimaryExpressionContext ctx);
 
 	/**
+	 * Visit a parse tree produced by {@link KlangParser#NullLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNullLiteral(@NotNull KlangParser.NullLiteralContext ctx);
+
+	/**
 	 * Visit a parse tree produced by {@link KlangParser#primitiveCollectionType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitPrimitiveCollectionType(@NotNull KlangParser.PrimitiveCollectionTypeContext ctx);
-
-	/**
-	 * Visit a parse tree produced by {@link KlangParser#IgnoreLiteral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIgnoreLiteral(@NotNull KlangParser.IgnoreLiteralContext ctx);
 
 	/**
 	 * Visit a parse tree produced by {@link KlangParser#compilationUnit}.
@@ -68,11 +75,25 @@ public interface KlangVisitor<T> extends ParseTreeVisitor<T> {
 	T visitQualifiedName(@NotNull KlangParser.QualifiedNameContext ctx);
 
 	/**
+	 * Visit a parse tree produced by {@link KlangParser#FloatLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFloatLiteral(@NotNull KlangParser.FloatLiteralContext ctx);
+
+	/**
 	 * Visit a parse tree produced by {@link KlangParser#PrintStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitPrintStatement(@NotNull KlangParser.PrintStatementContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link KlangParser#CharacterLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCharacterLiteral(@NotNull KlangParser.CharacterLiteralContext ctx);
 
 	/**
 	 * Visit a parse tree produced by {@link KlangParser#type}.
@@ -136,4 +157,11 @@ public interface KlangVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitIgnore(@NotNull KlangParser.IgnoreContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link KlangParser#BooleanLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBooleanLiteral(@NotNull KlangParser.BooleanLiteralContext ctx);
 }

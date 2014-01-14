@@ -9,6 +9,17 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface KlangListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by {@link KlangParser#StringLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringLiteral(@NotNull KlangParser.StringLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KlangParser#StringLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringLiteral(@NotNull KlangParser.StringLiteralContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link KlangParser#parExpression}.
 	 * @param ctx the parse tree
 	 */
@@ -31,6 +42,17 @@ public interface KlangListener extends ParseTreeListener {
 	void exitPrimaryExpression(@NotNull KlangParser.PrimaryExpressionContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link KlangParser#NullLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterNullLiteral(@NotNull KlangParser.NullLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KlangParser#NullLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitNullLiteral(@NotNull KlangParser.NullLiteralContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link KlangParser#primitiveCollectionType}.
 	 * @param ctx the parse tree
 	 */
@@ -40,17 +62,6 @@ public interface KlangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPrimitiveCollectionType(@NotNull KlangParser.PrimitiveCollectionTypeContext ctx);
-
-	/**
-	 * Enter a parse tree produced by {@link KlangParser#IgnoreLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void enterIgnoreLiteral(@NotNull KlangParser.IgnoreLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link KlangParser#IgnoreLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void exitIgnoreLiteral(@NotNull KlangParser.IgnoreLiteralContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link KlangParser#compilationUnit}.
@@ -97,6 +108,17 @@ public interface KlangListener extends ParseTreeListener {
 	void exitQualifiedName(@NotNull KlangParser.QualifiedNameContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link KlangParser#FloatLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterFloatLiteral(@NotNull KlangParser.FloatLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KlangParser#FloatLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitFloatLiteral(@NotNull KlangParser.FloatLiteralContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link KlangParser#PrintStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -106,6 +128,17 @@ public interface KlangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPrintStatement(@NotNull KlangParser.PrintStatementContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link KlangParser#CharacterLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterCharacterLiteral(@NotNull KlangParser.CharacterLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KlangParser#CharacterLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitCharacterLiteral(@NotNull KlangParser.CharacterLiteralContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link KlangParser#type}.
@@ -205,4 +238,15 @@ public interface KlangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIgnore(@NotNull KlangParser.IgnoreContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link KlangParser#BooleanLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterBooleanLiteral(@NotNull KlangParser.BooleanLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KlangParser#BooleanLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitBooleanLiteral(@NotNull KlangParser.BooleanLiteralContext ctx);
 }

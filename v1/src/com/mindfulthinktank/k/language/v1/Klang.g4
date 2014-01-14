@@ -58,11 +58,11 @@ qualifiedName
 
 literal
     :   IntegerLiteral          # IntegerLiteral
-    |   FloatingPointLiteral    # IgnoreLiteral
-    |   CharacterLiteral        # IgnoreLiteral
-    |   StringLiteral           # IgnoreLiteral
-    |   BooleanLiteral          # IgnoreLiteral
-    |   'null'                  # IgnoreLiteral
+    |   FloatingPointLiteral    # FloatLiteral
+    |   CharacterLiteral        # CharacterLiteral
+    |   StringLiteral           # StringLiteral
+    |   BooleanLiteral          # BooleanLiteral
+    |   'null'                  # NullLiteral
     ;
 
 statement

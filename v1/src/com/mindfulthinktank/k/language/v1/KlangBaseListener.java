@@ -17,6 +17,19 @@ public class KlangBaseListener implements KlangListener {
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
+	@Override public void enterStringLiteral(@NotNull KlangParser.StringLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitStringLiteral(@NotNull KlangParser.StringLiteralContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
 	@Override public void enterParExpression(@NotNull KlangParser.ParExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -43,6 +56,19 @@ public class KlangBaseListener implements KlangListener {
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
+	@Override public void enterNullLiteral(@NotNull KlangParser.NullLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitNullLiteral(@NotNull KlangParser.NullLiteralContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
 	@Override public void enterPrimitiveCollectionType(@NotNull KlangParser.PrimitiveCollectionTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -50,19 +76,6 @@ public class KlangBaseListener implements KlangListener {
 	 * The default implementation does nothing.
 	 */
 	@Override public void exitPrimitiveCollectionType(@NotNull KlangParser.PrimitiveCollectionTypeContext ctx) { }
-
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void enterIgnoreLiteral(@NotNull KlangParser.IgnoreLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 * <p/>
-	 * The default implementation does nothing.
-	 */
-	@Override public void exitIgnoreLiteral(@NotNull KlangParser.IgnoreLiteralContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -121,6 +134,19 @@ public class KlangBaseListener implements KlangListener {
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
+	@Override public void enterFloatLiteral(@NotNull KlangParser.FloatLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitFloatLiteral(@NotNull KlangParser.FloatLiteralContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
 	@Override public void enterPrintStatement(@NotNull KlangParser.PrintStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -128,6 +154,19 @@ public class KlangBaseListener implements KlangListener {
 	 * The default implementation does nothing.
 	 */
 	@Override public void exitPrintStatement(@NotNull KlangParser.PrintStatementContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterCharacterLiteral(@NotNull KlangParser.CharacterLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitCharacterLiteral(@NotNull KlangParser.CharacterLiteralContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -245,6 +284,19 @@ public class KlangBaseListener implements KlangListener {
 	 * The default implementation does nothing.
 	 */
 	@Override public void exitIgnore(@NotNull KlangParser.IgnoreContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void enterBooleanLiteral(@NotNull KlangParser.BooleanLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitBooleanLiteral(@NotNull KlangParser.BooleanLiteralContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
