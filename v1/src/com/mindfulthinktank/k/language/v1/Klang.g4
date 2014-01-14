@@ -97,8 +97,8 @@ expression
     |   expression ('++' | '--')                    # Ignore
     |   ('+'|'-'|'++'|'--') expression              # Ignore
     |   ('~'|'!') expression                        # Ignore
-    |   expression ('*'|'/'|'%') expression         # Ignore
-    |   expression ('+'|'-') expression             # Ignore
+    |   expression op=('*'|'/'|'%') expression      # BinaryExpression
+    |   expression op=('+'|'-') expression          # BinaryExpression
     |   expression ('<' '<' | '>' '>' '>' | '>' '>') expression # Ignore
     |   expression ('<=' | '>=' | '>' | '<') expression # Ignore
     |   expression 'instanceof' type                # Ignore

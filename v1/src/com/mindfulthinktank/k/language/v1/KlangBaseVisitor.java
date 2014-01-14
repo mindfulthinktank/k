@@ -26,6 +26,14 @@ public class KlangBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.
 	 */
+	@Override public T visitBinaryExpression(@NotNull KlangParser.BinaryExpressionContext ctx) { return visitChildren(ctx); }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.
+	 */
 	@Override public T visitParExpression(@NotNull KlangParser.ParExpressionContext ctx) { return visitChildren(ctx); }
 
 	/**

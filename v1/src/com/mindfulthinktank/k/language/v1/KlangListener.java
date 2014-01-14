@@ -20,6 +20,17 @@ public interface KlangListener extends ParseTreeListener {
 	void exitStringLiteral(@NotNull KlangParser.StringLiteralContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link KlangParser#BinaryExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterBinaryExpression(@NotNull KlangParser.BinaryExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link KlangParser#BinaryExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitBinaryExpression(@NotNull KlangParser.BinaryExpressionContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link KlangParser#parExpression}.
 	 * @param ctx the parse tree
 	 */

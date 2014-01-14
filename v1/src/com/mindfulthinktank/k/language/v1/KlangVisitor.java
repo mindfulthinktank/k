@@ -19,6 +19,13 @@ public interface KlangVisitor<T> extends ParseTreeVisitor<T> {
 	T visitStringLiteral(@NotNull KlangParser.StringLiteralContext ctx);
 
 	/**
+	 * Visit a parse tree produced by {@link KlangParser#BinaryExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBinaryExpression(@NotNull KlangParser.BinaryExpressionContext ctx);
+
+	/**
 	 * Visit a parse tree produced by {@link KlangParser#parExpression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

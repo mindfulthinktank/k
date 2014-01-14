@@ -2,8 +2,8 @@ package com.mindfulthinktank.k.model.expressions;
 
 
 public class BinaryExpression extends Expression {
-    protected Expression left;
-    protected Expression right;
+    public Expression left;
+    public Expression right;
     
     public BinaryExpression(ExpressionKind kind) {
         super(kind);

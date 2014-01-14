@@ -14,7 +14,7 @@ import com.mindfulthinktank.k.model.CompilationUnit;
 public class MainProgram {
     public static class Generator {
         public static String generateFromModel(CompilationUnit compilationUnit) {
-            STGroup templateGroup = new STGroupFile("c:\\users\\ibrahim\\desktop\\java.stg");
+            STGroup templateGroup = new STGroupFile(System.getProperty("user.dir") + "\\src\\com\\mindfulthinktank\\k\\testing\\java.stg");
             ST template = templateGroup.getInstanceOf("compilationUnit");
             template.add("u", compilationUnit);
             return template.render();
@@ -23,8 +23,8 @@ public class MainProgram {
     
     public static void main(String[] args) throws IOException {
         System.out.println("Start");
-
-        ParseTree tree = Parser.parseFile("c:\\users\\ibrahim\\Desktop\\test.txt");
+        
+        ParseTree tree = Parser.parseFile(System.getProperty("user.dir") + "\\src\\com\\mindfulthinktank\\k\\testing\\test.txt");
         CompilationUnit model = ModelExtractor.buildFromTree(tree);
      
         String java = Generator.generateFromModel(model);

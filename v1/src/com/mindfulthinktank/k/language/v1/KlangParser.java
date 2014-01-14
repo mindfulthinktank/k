@@ -938,6 +938,29 @@ public class KlangParser extends Parser {
 			this._p = ctx._p;
 		}
 	}
+	public static class BinaryExpressionContext extends ExpressionContext {
+		public Token op;
+		public ExpressionContext expression(int i) {
+			return getRuleContext(ExpressionContext.class,i);
+		}
+		public List<ExpressionContext> expression() {
+			return getRuleContexts(ExpressionContext.class);
+		}
+		public BinaryExpressionContext(ExpressionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).enterBinaryExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof KlangListener ) ((KlangListener)listener).exitBinaryExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof KlangVisitor ) return ((KlangVisitor<? extends T>)visitor).visitBinaryExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 	public static class PrimaryExpressionContext extends ExpressionContext {
 		public PrimaryContext primary() {
 			return getRuleContext(PrimaryContext.class,0);
@@ -1059,14 +1082,15 @@ public class KlangParser extends Parser {
 					switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
 					case 1:
 						{
-						_localctx = new IgnoreContext(new ExpressionContext(_parentctx, _parentState, _p));
+						_localctx = new BinaryExpressionContext(new ExpressionContext(_parentctx, _parentState, _p));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(107);
 						if (!(13 >= _localctx._p)) throw new FailedPredicateException(this, "13 >= $_p");
 						setState(108);
+						((BinaryExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(((((_la - 109)) & ~0x3f) == 0 && ((1L << (_la - 109)) & ((1L << (MUL - 109)) | (1L << (DIV - 109)) | (1L << (MOD - 109)))) != 0)) ) {
-						_errHandler.recoverInline(this);
+							((BinaryExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
 						setState(109); expression(14);
@@ -1075,14 +1099,15 @@ public class KlangParser extends Parser {
 
 					case 2:
 						{
-						_localctx = new IgnoreContext(new ExpressionContext(_parentctx, _parentState, _p));
+						_localctx = new BinaryExpressionContext(new ExpressionContext(_parentctx, _parentState, _p));
 						pushNewRecursionContext(_localctx, _startState, RULE_expression);
 						setState(110);
 						if (!(12 >= _localctx._p)) throw new FailedPredicateException(this, "12 >= $_p");
 						setState(111);
+						((BinaryExpressionContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==ADD || _la==SUB) ) {
-						_errHandler.recoverInline(this);
+							((BinaryExpressionContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
 						setState(112); expression(13);

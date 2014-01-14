@@ -30,6 +30,19 @@ public class KlangBaseListener implements KlangListener {
 	 * <p/>
 	 * The default implementation does nothing.
 	 */
+	@Override public void enterBinaryExpression(@NotNull KlangParser.BinaryExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
+	@Override public void exitBinaryExpression(@NotNull KlangParser.BinaryExpressionContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 * <p/>
+	 * The default implementation does nothing.
+	 */
 	@Override public void enterParExpression(@NotNull KlangParser.ParExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
