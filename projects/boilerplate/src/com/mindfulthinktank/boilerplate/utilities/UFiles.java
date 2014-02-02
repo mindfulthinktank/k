@@ -25,6 +25,15 @@ public class UFiles {
     return content;
   }
 
+  public static List<String> readNonEmptyLinesOrNull(String path) {
+    try {
+      return readNonEmptyLines(path);
+    } catch (IOException e) {
+      e.printStackTrace();
+      return null;
+    }
+  }
+
   public static List<String> readNonEmptyLines(String path) throws IOException {
     List<String> allLines = Files.readAllLines(Paths.get(path), Charset.forName("utf8"));
     List<String> lines = new ArrayList<String>();
