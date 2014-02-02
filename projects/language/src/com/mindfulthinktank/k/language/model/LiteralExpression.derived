@@ -1,0 +1,14 @@
+package ${package};
+
+import com.mindfulthinktank.boilerplate.utilities.UConvert;
+
+public class ${value}${base} extends ${base}<${value}> {
+ public ${value}${base}(String text) {
+   super(${base}Kind.${value}, text);
+ }
+ 
+ @Override
+ protected ${value} convert(String text) {
+   return UConvert.to${value}(text);
+ }
+}

@@ -1,0 +1,4 @@
+<factorypath>
+    <factorypathentry kind="EXTJAR" id="S:\local\software\jars\experimental\boilerplate.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="EXTJAR" id="S:\local\software\jars\velocity-1.7-dep.jar" enabled="true" runInBatchMode="false"/>
+</factorypath>

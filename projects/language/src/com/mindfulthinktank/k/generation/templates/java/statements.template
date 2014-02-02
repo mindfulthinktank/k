@@ -1,0 +1,3 @@
+#macro(print_statement $e)
+  System.out.println(#expression($e));
+#end

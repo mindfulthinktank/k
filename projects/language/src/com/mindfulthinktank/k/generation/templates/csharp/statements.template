@@ -1,0 +1,3 @@
+#macro(print_statement $e)
+  Console.WriteLine(#expression($e));
+#end

@@ -1,0 +1,6 @@
+#macro(expression $e)
+#if ($e.Kind == "Binary")
+#expression($e.left) $e.BinaryKind.ShortHand #expression($e.right)#elseif ($e.Kind == "Identifier")
+$e.identifier#elseif ($e.kind == "Literal")
+$e.text#end
+#end
