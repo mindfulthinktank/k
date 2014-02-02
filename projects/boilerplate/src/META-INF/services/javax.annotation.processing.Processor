@@ -1,0 +1,4 @@
+com.mindfulthinktank.boilerplate.annotationprocessors.ClassDerivationsProcessor
+com.mindfulthinktank.boilerplate.annotationprocessors.EnumDerivationsProcessor
+com.mindfulthinktank.boilerplate.annotationprocessors.ShorthandEnumerationProcessor
+

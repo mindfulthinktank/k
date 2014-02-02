@@ -1,0 +1,29 @@
+package $package;
+
+import java.util.Hashtable;
+import java.util.Map;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+public enum $name {
+ #foreach ($pair in $pairs)
+ $pair.first ( "$pair.second" ),
+ #end
+ ;
+
+  @Getter private final String shortHand;
+
+  static private final Map<String, $name> map = new Hashtable<String, $name>();
+
+  static {
+    for ($name kind : ${name}.values()) {
+      map.put(kind.shortHand, kind);
+    }
+  }
+
+  static public $name forShortHand(String shortHand) {
+    return map.get(shortHand);
+  }
+}

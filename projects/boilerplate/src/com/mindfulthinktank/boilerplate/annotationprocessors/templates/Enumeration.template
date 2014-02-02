@@ -1,0 +1,7 @@
+package ${package};
+
+public enum ${name} {
+ #foreach ($value in $values)
+ ${value},
+ #end
+}
