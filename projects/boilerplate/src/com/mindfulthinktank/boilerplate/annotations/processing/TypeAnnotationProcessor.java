@@ -1,4 +1,4 @@
-package com.mindfulthinktank.boilerplate.annotationprocessors;
+package com.mindfulthinktank.boilerplate.annotations.processing;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
@@ -21,7 +21,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
-public abstract class TypeAnnotationProcessor extends ConvenientProcessor {
+public abstract class TypeAnnotationProcessor extends AnnotationProcessor {
   @Getter private final Class<? extends Annotation> annotationClass;
 
   @Override

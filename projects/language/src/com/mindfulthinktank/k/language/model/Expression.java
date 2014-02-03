@@ -4,6 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
-public abstract class Expression {
+public abstract class Expression extends Element{
   @Getter private final ExpressionKind kind;
 }

@@ -1,0 +1,14 @@
+package ${package};
+
+import com.mindfulthinktank.boilerplate.utilities.UConvert;
+
+public class ${class} extends ${target.simpleName}<${variety}> {
+ public ${class}(String text) {
+   super(${target.simpleName}Kind.${variety}, text);
+ }
+ 
+ @Override
+ protected ${variety} convert(String text) {
+   return UConvert.to${variety}(text);
+ }
+}

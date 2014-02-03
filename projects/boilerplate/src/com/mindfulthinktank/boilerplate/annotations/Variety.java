@@ -1,4 +1,4 @@
-package com.mindfulthinktank.boilerplate;
+package com.mindfulthinktank.boilerplate.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,4 +7,6 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.TYPE)
-public @interface ShorthandEnumeration {}
+public @interface Variety {
+  String[] values();
+}

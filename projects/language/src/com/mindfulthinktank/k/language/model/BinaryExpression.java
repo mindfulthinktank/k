@@ -2,9 +2,9 @@ package com.mindfulthinktank.k.language.model;
 
 import lombok.Getter;
 
-import com.mindfulthinktank.boilerplate.ShorthandEnumeration;
+import com.mindfulthinktank.boilerplate.annotations.VarietyShorthandEnumeration;
 
-@ShorthandEnumeration
+@VarietyShorthandEnumeration
 public class BinaryExpression extends Expression {
   @Getter private final BinaryExpressionKind binaryKind;
   @Getter private final Expression           left;

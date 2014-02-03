@@ -1,6 +1,6 @@
 package ${package};
 
-public enum ${name} {
+public enum ${enum} {
  #foreach ($value in $values)
  ${value},
  #end

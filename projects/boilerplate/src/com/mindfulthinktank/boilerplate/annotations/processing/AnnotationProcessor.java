@@ -1,4 +1,4 @@
-package com.mindfulthinktank.boilerplate.annotationprocessors;
+package com.mindfulthinktank.boilerplate.annotations.processing;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -10,7 +10,7 @@ import javax.annotation.processing.ProcessingEnvironment;
 import javax.tools.Diagnostic.Kind;
 import javax.tools.JavaFileObject;
 
-public abstract class ConvenientProcessor extends AbstractProcessor {
+public abstract class AnnotationProcessor extends AbstractProcessor {
   protected Filer  filer;
   private Messager messager;
 

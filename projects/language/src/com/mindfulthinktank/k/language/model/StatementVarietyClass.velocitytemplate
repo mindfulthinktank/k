@@ -1,0 +1,7 @@
+package ${package};
+
+public abstract class ${class} extends ${target.simpleName} {
+  public ${class}() {
+    super(${target.simpleName}Kind.${variety});
+  }
+}

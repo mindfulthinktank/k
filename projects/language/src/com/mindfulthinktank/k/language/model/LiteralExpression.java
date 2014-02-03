@@ -1,12 +1,16 @@
 package com.mindfulthinktank.k.language.model;
 
-import com.mindfulthinktank.boilerplate.Derivations;
-
 import lombok.Getter;
 
-//@GenerateDerived(values = {}, generateEnumeration = true)
-@Derivations(values = { "Boolean", "Character", "Float", "Integer", "String", "Void" },
-             generateEnumeration = true)
+import com.mindfulthinktank.boilerplate.annotations.Variety;
+import com.mindfulthinktank.boilerplate.annotations.VarietyClass;
+import com.mindfulthinktank.boilerplate.annotations.VarietyEnumeration;
+
+@Variety(values = { "Boolean", "Character", "Float", "Integer", "String", "Void" })
+@VarietyEnumeration
+@VarietyClass
+//@Derivations(values = { "Boolean", "Character", "Float", "Integer", "String", "Void" },
+//             generateEnumeration = true)
 public abstract class LiteralExpression<T> extends Expression {
   @Getter private final T                     value;
   @Getter private final String                text;
